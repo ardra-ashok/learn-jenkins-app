@@ -21,10 +21,12 @@ pipeline {
             }
         }
         stage('Test'){
-            sh '''
+            steps{
+                sh '''
                 test -f build/index.html
                 npm test
-            '''
+                '''
+            }
         }
     }
 }
